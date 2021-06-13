@@ -37,7 +37,7 @@ module for the Web Application Platform XCL.
 * Maintainer : [gigamaster - XCL PHP7](https://github.com/gigamaster/xelfinder)
 
 This module is released by default with the package bundle XCL 2.3.x.  
-However you can clone or download the module from "[here](https://github.com/gigamaster?repo_name=xelfinder&tab=packages)".
+However you can clone or download the module from "[here](https://github.com/gigamaster/xelfinder/releases)".
 
 For topics, questions, and requests about elFinder, please refer to [elFinder](https://github.com/Studio-42/elFinder). 
 

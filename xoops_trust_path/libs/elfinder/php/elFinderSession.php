@@ -68,8 +68,6 @@ class elFinderSession implements elFinderSessionInterface
         if (function_exists('apache_get_version') || $this->opts['cookieParams']) {
             $this->fixCookieRegist = true;
         }
-
-        //258 return $this;
     }
 
     /**
@@ -132,8 +130,7 @@ class elFinderSession implements elFinderSessionInterface
         if ($this->fixCookieRegist === true) {
             if ((int)ini_get('session.use_cookies') === 1) {
                 if (ini_set('session.use_cookies', 0) === false) {
-                    //258 $this->fixCookieRegist === false;
-					$this->fixCookieRegist = false;
+                    $this->fixCookieRegist = false;
                 }
             }
         }

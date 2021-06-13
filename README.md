@@ -9,7 +9,7 @@
 
 **Module Name**  : X-elFinder (elFinder)  
 
-**Module Version**  : 2.58  
+**Module Version**  : 2.59  
 
 **Description** : web-based file manager running on JavaScript + PHP  
 module for the Web Application Platform XCL.

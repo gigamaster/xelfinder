@@ -1,25 +1,52 @@
-# X-elFinder (File manager and editor)
 
-X-elFinder (X-elFinder)
-elFinder 2.x, web-based file manager running on JavaScript + PHP module for XOOPS Cube.
+[![Creative Commons cc-sa](http://ForTheBadge.com/images/badges/cc-sa.svg)](https://creativecommons.org/licenses/by-sa/4.0) 
+[![UTD powered-by-electricity](http://ForTheBadge.com/images/badges/powered-by-electricity.svg)](https://github.com/gigamaster/xelfinder)
+[![UTD](https://forthebadge.com/images/badges/built-with-love.svg)](https://github.com/gigamaster/xelfinder)
 
 
-* [nao-pon/xelfinder - GitHub](https://github.com/nao-pon/xelfinder)
 
-You can download it from "[ZIP](https://github.com/nao-pon/xelfinder/zipball/master)" on the above page.
+## ///// — Module X-elFinder
 
-For topics, questions, and requests about X-elFinder, please visit the forum.
+**Module Name**  : X-elFinder (elFinder)  
 
-* [X-elFinder - フォーラム - XOOPS マニア](http://xoops.hypweb.net/modules/forum/index.php?forum_id=25)
+**Module Version**  : 2.58  
+
+**Description** : web-based file manager running on JavaScript + PHP  
+module for the Web Application Platform XCL.
+ (File manager and editor)
+
+ <img src="xelfinder-preview.png" title="X-elFinder screenshot">
+
+  
+##### :computer: The Minimum Requirements
+
+
+
+          Apache, Nginx, etc.
+          PHP ^7.2.x
+          MySQL ^5.6.x, MariaDB
+          DB InnoDB utf8 / utf8mb4
+          XCL ^2.3.x 
+
+
+
+
+
+
+* Author : [nao-pon/xelfinder - GitHub](https://github.com/nao-pon/xelfinder)
+* Maintainer : [gigamaster - XCL PHP7](https://github.com/gigamaster/xelfinder)
+
+This module is released by default with the package bundle XCL 2.3.x.  
+However you can clone or download the module from "[here](https://github.com/gigamaster?repo_name=xelfinder&tab=packages)".
+
+For topics, questions, and requests about elFinder, please refer to [elFinder](https://github.com/Studio-42/elFinder). 
+
 
 ## Environment
 
-* XOOPS platforms
- * Verified platforms
-  * XOOPS Cube Legacy 2.2.0, 2.2.1
-  * XOOPS 2.1.16-JP
-  XOOPS 2.1.16-JP * XOOPS 2.5.5
-* PHP 5.2 or higher
+* XOOPSCube Web Application Platforms
+  * XCL ^2.3.x
+  * XDektop ^2.3.x
 
 ## Notes on installation
 
@@ -27,19 +54,21 @@ The following directories require write (file creation) permission (e.g. 777 or 
 
 * html/modules/xelfinder/cache
 * html/modules/xelfinder/cache/tmb
-* xoops_trust_path/uploads/xelfinder
+* trust_path/uploads/xelfinder
 
-PathInfo is used for image referencing, but depending on the server environment, PathInfo may not be available and the image may not be displayed correctly.
+PathInfo is used for image referencing, but depending on the server environment,  
+PathInfo may not be available and the image may not be displayed correctly.
 
-In this case, please set "Disable PathInfo for file reference URLs" to "Yes" in the general settings of the administration page.
+In this case, please set "Disable PathInfo for file reference URLs" to "Yes"  
+in the general settings of the administration page.
 
 ### Change the popup to IFRAME
 
-The default popup openWithSelfMain() will open a new window so,  
-to change this to a popup using IFRAME, load `<{xoops_js}>` in theme.html,   
-and then load openWithSelfMain_iframe.js.
+The default popup openWithSelfMain() can open a new window or a popup using IFRAME  
+Check the module template to adapt the design to your theme.html.
 
-From the HypConf (HypCommon settings) module, select "Other settings" - "Tags to insert at the end of &lt;head&gt;".
+### HypCommon
+Otherwise, if you have installed the module/library _HypCommon_ from the HypConf (HypCommon settings) module, select "Other settings" - "Tags to insert at the end of &lt;head&gt;".
 
     <script type="text/javascript" src="<{$xoops_url}>/modules/xelfinder/include/js/openWithSelfMain_iframe.js"></script>
 
@@ -56,13 +85,13 @@ Example (theme.html):
 
 ### About libraries
 
-HypCommonFunc is required in order to enable this feature.
+HypCommonFunc is required in order to extend and enable this feature.
 
 * [HypCommonFunc について](http://xoops.hypweb.net/modules/xpwiki/156.html)
 
 ## X-elFinder Specific Features
 
-In addition to the functions of elFinder, it has the following features
+In addition to the functions of elFinder, X-elFinder has the following features
 
 * Drag and drop file uploads between browser windows. (Firefox, Chrome, Safari)
 * Image editing using Pixlr.com 
@@ -82,7 +111,7 @@ In addition to the functions of elFinder, it has the following features
 
 ## imagemanager.php   
 
-Except for XOOPS Cube Legacy, this can be done by inserting in mainfile.php  
+Except for XOOPSCube Platforms, this can be done for XOOPS legacy by inserting in mainfile.php  
 immediately after the line that reads XOOPS_ROOT_PATH/imagemanager.php :
 
     include 'modules/xelfinder/manager.php';
@@ -91,15 +120,16 @@ immediately after the line that reads XOOPS_ROOT_PATH/imagemanager.php :
 
 ## Notes on Uninstallation
 
-When uninstalling, the uploaded files will remain, but all information such as folders, permissions, owners, etc. will be lost.
+The uploaded files will remain when when uninstalling the module X-elFinder,  
+but all information is removed, such as folders, permissions, owners, etc.
 
 If you want to save that information, please save your data with a backup of your database.
 
-X-elFinder table name will start with "[XOOPS DB prefix]_[X-elFinder module directory name]_".
+X-elFinder table name will start with "[XCL DB prefix]_[X-elFinder module directory name]_".
 
-If you want to uninstall and remove the files, you can find them in "XOOPS_TRUST_PATH/uploads/xelfinder" directory.
+If you want to uninstall and remove the files, you can find them in "TRUST_PATH/uploads/xelfinder" directory.
 
-* file : "[after domain part of XOOPS_URL]_[X-elFinder module directory name]_[file ID(number)]"
-* thumb: "[after domain part of XOOPS_URL]_[X-elFinder module directory name]_[file ID(number)]_[reduced ratio(number)].tmb"
+* file : "_[X-elFinder module directory name]_[file ID(number)]"
+* thumb: "_[X-elFinder module directory name]_[file ID(number)]_[reduced ratio(number)].tmb"
 
 Please refer to  [elFinder](https://github.com/Studio-42/elFinder) project documentation for details.
